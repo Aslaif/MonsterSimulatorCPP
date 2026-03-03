@@ -6,8 +6,8 @@ class TrollMonster :
 public:
 	TrollMonster()
 	{
-		HitPoints = 270;
-		AttackPoints = 95;
+		HitPoints = 180;
+		AttackPoints = 7;
 		DefencePoints = 5;
 		SpeedPoints = 2;
 
@@ -23,5 +23,12 @@ public:
 		MonsterType = Troll;
 		Name = "The Troll";
 	}
+
+	void LevelUp(int levelUp);
+	void AddState(int);
+	void CreateWeapons(int randomValue, int level);
+	bool IsUseableWeapon(Weapon* weapon);
+
+	BaseMonster* Clone();
 };
 

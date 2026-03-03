@@ -1,6 +1,9 @@
 #pragma once
 
 #include "BaseMonster.h"
+#include <vector>	
+#include "Weapon.h"
+#include "Utility.h"
 
 class Game
 {
@@ -17,8 +20,10 @@ public:
 private:
 	void ChooseOwnFighter();
 	BaseMonster* RandomEnemyFighter(int);
+	Weapon* CreateRandomWeapon(BaseMonster*, int);
 	BaseMonster* CreateMonster(EMonster);
 	void Fight();
 	void LootAndLevel();
+	void Loot(Weapon* weapon);
 };
 

@@ -1,5 +1,8 @@
 #pragma once
+
 #include "BaseMonster.h"
+#include "Sword.h"
+
 class OrkMonster :
 	public BaseMonster
 {
@@ -19,6 +22,13 @@ public:
 
 		MonsterType = Ork;
 		Name = "The Ork";
+
+		RightHand = new Sword();
 	}
+
+	bool IsDodge(int strength);
+	void CreateWeapons(int randomValue, int level);
+
+	BaseMonster* Clone();
 };
 

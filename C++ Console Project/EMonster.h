@@ -6,7 +6,8 @@ enum EMonster
 {
 	Goblin = 1, // has to be start
 	Ork,
-	Troll  // has to be end
+	Troll,		// has to be end of monsters
+	AllTyps		// has to be end
 };
 
 //std::ostream& operator<<(std::ostream& out, const EMonster value) {

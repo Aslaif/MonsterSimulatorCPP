@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BaseMonster.h"
+#include "Dagger.h"
 
 class GoblinMonster :
 	public BaseMonster
@@ -22,6 +23,12 @@ public:
 
 		MonsterType = Goblin;
 		Name = "The Goblin";
+
+		RightHand = new Dagger();
 	}
+
+	void CreateWeapons(int randomValue, int level);
+
+	BaseMonster* Clone();
 };
 

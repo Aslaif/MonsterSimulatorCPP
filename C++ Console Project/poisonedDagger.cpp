@@ -1,0 +1,13 @@
+#include "poisonedDagger.h" 
+
+int PoisonedDagger::SpecialEffect(BaseMonster* enemyMonster, BaseMonster* monsterWithWeapon)
+{
+    enemyMonster->Poisened++;
+
+    return 0;
+}
+
+Weapon* PoisonedDagger::Clone()
+{
+    return new PoisonedDagger(*this);
+}

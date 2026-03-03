@@ -128,19 +128,41 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseMonster.cpp" />
+    <ClCompile Include="Cudgel.cpp" />
+    <ClCompile Include="Dagger.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Goblin.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NobleDagger.cpp" />
     <ClCompile Include="Ork.cpp" />
+    <ClCompile Include="poisonedDagger.cpp" />
+    <ClCompile Include="SerradedDagger.cpp" />
+    <ClCompile Include="SerradedSword.cpp" />
+    <ClCompile Include="Shield.cpp" />
+    <ClCompile Include="Sword.cpp" />
+    <ClCompile Include="TreeTrunk.cpp" />
     <ClCompile Include="Troll.cpp" />
+    <ClCompile Include="Utility.cpp" />
+    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseMonster.h" />
+    <ClInclude Include="Cudgel.h" />
+    <ClInclude Include="Dagger.h" />
     <ClInclude Include="EMonster.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Goblin.h" />
+    <ClInclude Include="NobleDagger.h" />
     <ClInclude Include="Ork.h" />
+    <ClInclude Include="poisonedDagger.h" />
+    <ClInclude Include="SerradedDagger.h" />
+    <ClInclude Include="SerradedSword.h" />
+    <ClInclude Include="Shield.h" />
+    <ClInclude Include="Sword.h" />
+    <ClInclude Include="TreeTrunk.h" />
     <ClInclude Include="Troll.h" />
+    <ClInclude Include="Utility.h" />
+    <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

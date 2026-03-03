@@ -12,6 +12,6 @@ int main()
 
 	return 0;
 
-	// warum ist es ein endloser fight??
-	// warum funktionieren die veraenderten troll methoden nicht??
-}
+	// CreateWeapon schoener gestallten. vielleicht mit einer list? Dictionlary waere perfekt. 
+	// hast du wirklich lust dazu? ueberleg es dir.
+} 
