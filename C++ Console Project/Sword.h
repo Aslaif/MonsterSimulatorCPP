@@ -7,7 +7,7 @@ public:
     Sword()
     {
         Level = 1;
-        MonsterCanUsed = AllTyps;
+        AllowedMonsterType = AllTypes;
         Name = "Sword";
 
         BoniAttackPoints = 10;

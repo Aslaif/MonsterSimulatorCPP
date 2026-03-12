@@ -39,7 +39,7 @@ void Game::ChooseOwnFighter()
 	}
 
 	cout << endl;
-	cout << "Choose your challanger!" << endl;
+	cout << "Choose your challenger!" << endl;
 
 	for (int i = Goblin; i <= Troll; i++)
 	{
@@ -68,14 +68,14 @@ void Game::ChooseOwnFighter()
 
 	system("cls");
 
-	cout << "You choosed " << ownMonster->Name << " as your Challenger!" << endl;
+	cout << "You chose " << ownMonster->Name << " as your Challenger!" << endl;
 	cout << "Give it a name" << endl;
 	cin >> ownMonster->Name;
 
 	system("cls");
 
 	cout << "Get your Fighter extra power!" << endl;
-	cout << "You could invest your Pions in every stat. The stats increase differently per point." << endl;
+	cout << "You could invest your Points in every stat. The stats increase differently per point." << endl;
 	ownMonster->LevelUp(3);
 
 	cout << ownMonster->Name << " is ready to fight!" << endl;
@@ -99,7 +99,7 @@ Weapon* Game::CreateRandomWeapon(BaseMonster* monster, int level)
 {
 	Weapon* weapon = nullptr;
 
-	monster->CreateWeapons(RandomInt(1, 100), level); // createWeapon geht schoener
+	monster->CreateWeapons(RandomInt(1, 100), level); 
 
 	return nullptr;
 }
@@ -190,7 +190,7 @@ void Game::Fight()
 
 	isGameOver = CopyOfOwnMonster->IsDead();
 	if (!isGameOver)
-		cout << enemyMonster->Name << " has fallen! " << CopyOfOwnMonster->Name << " win!" << endl;
+		cout << enemyMonster->Name << " has fallen! " << CopyOfOwnMonster->Name << " wins!" << endl;
 
 	cout << "The fight went " << turn << " rounds." << endl;
 }
@@ -202,7 +202,7 @@ void Game::LootAndLevel()
 
 	if (enemyMonster->RightHand != nullptr)
 	{
-		if (ownMonster->IsUseableWeapon(enemyMonster->RightHand))
+		if (ownMonster->IsUsableWeapon(enemyMonster->RightHand))
 			Loot(enemyMonster->RightHand);
 	}
 
@@ -210,7 +210,7 @@ void Game::LootAndLevel()
 
 	if (enemyMonster->LeftHand != nullptr)
 	{
-		if (ownMonster->IsUseableWeapon(enemyMonster->LeftHand))
+		if (ownMonster->IsUsableWeapon(enemyMonster->LeftHand))
 			Loot(enemyMonster->LeftHand);
 	}
 
@@ -222,20 +222,20 @@ void Game::LootAndLevel()
 void Game::Loot(Weapon* weapon)
 {
 	cout << enemyMonster->Name << " had a " << weapon->Name << "." << endl;
-	cout << "extra Health : " << weapon->BoniHitPoints << " extra Attack : " << weapon->BoniAttackPoints << " extra Defence : " << weapon->BoniDefencePoints << " Speed : " << weapon->BoniSpeedPoints << endl;
+	cout << "extra Health: " << weapon->BoniHitPoints << " extra Attack: " << weapon->BoniAttackPoints << " extra Defence: " << weapon->BoniDefencePoints << " Speed: " << weapon->BoniSpeedPoints << endl;
 	cout << endl;
 
 	cout << "The weapon(s) of " << ownMonster->Name << " are: " << endl;
 	if (ownMonster->RightHand != nullptr)
 	{
 		cout << "on the right hand: " << ownMonster->RightHand->Name << endl;
-		cout << "extra Health : " << ownMonster->RightHand->BoniHitPoints << " extra Attack : " << ownMonster->RightHand->BoniAttackPoints << " extra Defence : " << ownMonster->RightHand->BoniDefencePoints << " Speed : " << ownMonster->RightHand->BoniSpeedPoints << endl;
+		cout << "extra Health: " << ownMonster->RightHand->BoniHitPoints << " extra Attack: " << ownMonster->RightHand->BoniAttackPoints << " extra Defence: " << ownMonster->RightHand->BoniDefencePoints << " Speed: " << ownMonster->RightHand->BoniSpeedPoints << endl;
 	}
 
 	if (ownMonster->LeftHand != nullptr)
 	{
 		cout << "on the left hand: " << ownMonster->LeftHand->Name << endl;
-		cout << "extra Health : " << ownMonster->LeftHand->BoniHitPoints << " extra Attack : " << ownMonster->LeftHand->BoniAttackPoints << " extra Defence : " << ownMonster->LeftHand->BoniDefencePoints << " Speed : " << ownMonster->LeftHand->BoniSpeedPoints << endl;
+		cout << "extra Health: " << ownMonster->LeftHand->BoniHitPoints << " extra Attack: " << ownMonster->LeftHand->BoniAttackPoints << " extra Defence: " << ownMonster->LeftHand->BoniDefencePoints << " Speed: " << ownMonster->LeftHand->BoniSpeedPoints << endl;
 	}
 
 	cout << endl;
@@ -249,9 +249,9 @@ void Game::Loot(Weapon* weapon)
 	do
 	{
 		if (inputTurn != 1)
-			cout << "Pls enter a correct number between 1 and 3 from the options!" << endl;
+			cout << "Please enter a correct number between 1 and 3 from the options!" << endl;
 		else
-			cout << "Pls enter the desired stat using their corresponding number!" << endl;
+			cout << "Please enter the desired stat using their corresponding number!" << endl;
 
 		cin >> input;
 
@@ -264,9 +264,11 @@ void Game::Loot(Weapon* weapon)
 	case 1:
 		safeDelete(ownMonster->RightHand);
 		ownMonster->RightHand = weapon->Clone();
+		break;
 	case 2:
 		safeDelete(ownMonster->LeftHand);
 		ownMonster->LeftHand = weapon->Clone();
+		break;
 	case 3:
 		break;
 	default:

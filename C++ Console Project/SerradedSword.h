@@ -9,7 +9,7 @@ public:
     SerradedSword()
     {
         Level = 4;
-        MonsterCanUsed = AllTyps;
+        AllowedMonsterType = AllTypes;
         Name = "Serraded Sword";
 
         BoniAttackPoints = 12;

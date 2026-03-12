@@ -8,7 +8,7 @@ class Weapon
 {
 public:
 	int Level{ 1 };
-	EMonster MonsterCanUsed;
+	EMonster AllowedMonsterType;
 	std::string Name;
 
 	int BoniHitPoints{ 0 };

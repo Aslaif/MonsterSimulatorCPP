@@ -7,7 +7,7 @@ public:
     TreeTrunk()
     {
         Level = 3;
-        MonsterCanUsed = Troll;
+        AllowedMonsterType = Troll;
         Name = "Tree Trunk";
 
         BoniAttackPoints = 11;

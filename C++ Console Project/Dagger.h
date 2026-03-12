@@ -8,7 +8,7 @@ public:
     Dagger()
     {
         Level = 1;
-        MonsterCanUsed = Goblin;
+        AllowedMonsterType = Goblin;
         Name = "Dagger";
 
         BoniAttackPoints = 5;

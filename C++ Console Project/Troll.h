@@ -27,7 +27,7 @@ public:
 	void LevelUp(int levelUp);
 	void AddState(int);
 	void CreateWeapons(int randomValue, int level);
-	bool IsUseableWeapon(Weapon* weapon);
+	bool IsUsableWeapon(Weapon* weapon);
 
 	BaseMonster* Clone();
 };

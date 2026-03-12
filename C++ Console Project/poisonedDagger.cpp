@@ -2,7 +2,7 @@
 
 int PoisonedDagger::SpecialEffect(BaseMonster* enemyMonster, BaseMonster* monsterWithWeapon)
 {
-    enemyMonster->Poisened++;
+    enemyMonster->Poisoned++;
 
     return 0;
 }

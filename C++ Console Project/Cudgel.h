@@ -7,7 +7,7 @@ public:
     Cudgel()
     {
         Level = 5;
-        MonsterCanUsed = Troll;
+        AllowedMonsterType = Troll;
         Name = "Cudgel";
 
         BoniAttackPoints = 15;

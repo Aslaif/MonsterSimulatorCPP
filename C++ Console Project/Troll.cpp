@@ -6,8 +6,8 @@ using namespace std;
 
 void TrollMonster::LevelUp(int levelUp)
 {
-	cout << "LevelUp" << endl;
-	cout << "You have " << levelUp << " Level Pion(s) to change the stats of " << Name << "." << endl;
+	cout << "Level Up" << endl;
+	cout << "You have " << levelUp << " Level Point(s) to change the stats of " << Name << "." << endl;
 
 	cout << "Health: " << HitPoints << " +" << LevelUpHitPoints << " Attack: " << AttackPoints << " +" << LevelUpAttackPoints << " Defence: " << DefencePoints << " +" << LevelUpDefencePoints << " Speed: " << SpeedPoints << " +" << LevelUpSpeedPoints << endl;
 	cout << "Strength: " << Strength << " +" << LevelUpStrength << " Dexterity: " << Dexterity << " +" << LevelUpDexterity << endl;
@@ -24,9 +24,9 @@ void TrollMonster::LevelUp(int levelUp)
 		do
 		{
 			if (inputTurn != 1)
-				cout << "Pls enter a correct number between 1 and 4 from the options!" << endl;
+				cout << "Please enter a correct number between 1 and 4 from the options!" << endl;
 			else
-				cout << "Pls enter the desired stat using their corresponding number!" << endl;
+				cout << "Please enter the desired stat using its corresponding number!" << endl;
 
 			cin >> statsInput;
 
@@ -40,7 +40,7 @@ void TrollMonster::LevelUp(int levelUp)
 	system("cls");
 
 	cout << "The stats of " << Name << " are:" << endl;
-	cout << "Health: " << HitPoints << " Attack: " << AttackPoints << " Defence: " << endl;
+	cout << "Health: " << HitPoints << " Attack: " << AttackPoints << " Defence: " << DefencePoints << endl;
 	cout << "Strength: " << Strength << endl;
 	cout << endl;
 }
@@ -98,9 +98,9 @@ void TrollMonster::CreateWeapons(int randomValue, int level)
 	}
 }
 
-bool TrollMonster::IsUseableWeapon(Weapon* weapon)
+bool TrollMonster::IsUsableWeapon(Weapon* weapon)
 {
-	if (weapon->MonsterCanUsed == MonsterType)
+	if (weapon->AllowedMonsterType == MonsterType)
 	{
 		if (Strength >= weapon->MinStrength)
 			return true;

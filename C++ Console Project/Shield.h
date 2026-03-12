@@ -7,7 +7,7 @@ public:
 	Shield()
 	{
         Level = 1;
-        MonsterCanUsed = Ork;
+        AllowedMonsterType = Ork;
         Name = "Shield";
 
         BoniDefencePoints = 5;

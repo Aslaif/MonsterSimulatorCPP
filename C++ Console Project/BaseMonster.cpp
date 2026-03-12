@@ -5,7 +5,7 @@ using namespace std;
 
 void BaseMonster::Attack(BaseMonster* enemy)
 {
-	cout << Name << " attack " << enemy->Name << "!" << endl;
+	cout << Name << " attacks " << enemy->Name << "!" << endl;
 
 	if (enemy->IsDodge(Strength))
 		return;
@@ -30,7 +30,7 @@ bool BaseMonster::IsDodge(int strength)
 	if (dodgeValue < RandomInt(1, 20))
 		return false;
 
-	cout << Name << " dodge the attack!" << endl;
+	cout << Name << " dodges the attack!" << endl;
 	return true;
 }
 
@@ -43,7 +43,7 @@ void BaseMonster::TakeDamage(int attackDamage, int strength, int weapon)
 	if (HitPoints < 0)
 		HitPoints = 0;
 
-	cout << Name << " take " << takeDamage << " damage and still has " << HitPoints << " health pions." << endl;
+	cout << Name << " takes " << takeDamage << " damage and still has " << HitPoints << " health pions." << endl;
 }
 
 void BaseMonster::StatusEffect()
@@ -51,27 +51,27 @@ void BaseMonster::StatusEffect()
 	if (Bleeding > 0)
 	{
 		HitPoints -= Bleeding;
-		cout << Name << " taks " << Bleeding << " damage because of bleeding and still has " << HitPoints << " health pions." << endl;
+		cout << Name << " takes " << Bleeding << " damage due to bleeding and still has " << HitPoints << " health pions." << endl;
 	}
 
-	if (Poisened > 0)
+	if (Poisoned > 0)
 	{
 
 		if (RandomInt(0, 1) == 1)
 		{
 			if (Dexterity >= 1)
 			{
-				Dexterity -= Poisened;
-				cout << Name << " lose " << Poisened << " points of dexterity due to poisoning and still has " << Dexterity << " dexterity." << endl;
+				Dexterity -= Poisoned;
+				cout << Name << " loses " << Poisoned << " points of dexterity due to poisoning and still has " << Dexterity << " dexterity." << endl;
 			}
 			else if (Strength >= 1)
 			{
-				Strength -= Poisened;
-				cout << Name << " lose " << Poisened << " points of strength due to poisoning and still has " << Strength << " strength." << endl;
+				Strength -= Poisoned;
+				cout << Name << " loses " << Poisoned << " points of strength due to poisoning and still has " << Strength << " strength." << endl;
 			}
 			else
 			{
-				Poisened = 0;
+				Poisoned = 0;
 				return;
 			}
 		}
@@ -79,17 +79,17 @@ void BaseMonster::StatusEffect()
 		{
 			if (Strength >= 1)
 			{
-				Strength -= Poisened;
-				cout << Name << " lose " << Poisened << " points of strength due to poisoning and still has " << Strength << " strength." << endl;
+				Strength -= Poisoned;
+				cout << Name << " loses " << Poisoned << " points of strength due to poisoning and still has " << Strength << " strength." << endl;
 			}
 			else if (Dexterity >= 1)
 			{
-				Dexterity -= Poisened;
-				cout << Name << " lose " << Poisened << " points of dexterity due to poisoning and still has " << Dexterity << " dexterity." << endl;
+				Dexterity -= Poisoned;
+				cout << Name << " loses " << Poisoned << " points of dexterity due to poisoning and still has " << Dexterity << " dexterity." << endl;
 			}
 			else
 			{
-				Poisened = 0;
+				Poisoned = 0;
 				return;
 			}
 		}
@@ -106,7 +106,7 @@ bool BaseMonster::IsDead()
 
 void BaseMonster::LevelUp(int levelUp)
 {
-	cout << "LevelUp" << endl;
+	cout << "Level Up" << endl;
 	cout << "You have " << levelUp << " Level Point(s) to change the stats of " << Name << "." << endl;
 
 	cout << "Health: " << HitPoints << " +" << LevelUpHitPoints << " Attack: " << AttackPoints << " +" << LevelUpAttackPoints << " Defence: " << DefencePoints << " +" << LevelUpDefencePoints << " Speed: " << SpeedPoints << " +" << LevelUpSpeedPoints << endl;
@@ -124,9 +124,9 @@ void BaseMonster::LevelUp(int levelUp)
 		do
 		{
 			if (inputTurn != 1)
-				cout << "Pls enter a correct number between 1 and 6 from the options!" << endl;
+				cout << "Please enter a correct number between 1 and 6 from the options!" << endl;
 			else
-				cout << "Pls enter the desired stat using their corresponding number!" << endl;
+				cout << "Please enter the desired stat using their corresponding number!" << endl;
 
 			cin >> statsInput;
 
@@ -199,9 +199,9 @@ void BaseMonster::CreateWeapons(int randomValue, int level)
 
 }
 
-bool BaseMonster::IsUseableWeapon(Weapon* weapon)
+bool BaseMonster::IsUsableWeapon(Weapon* weapon)
 {
-	if (weapon->MonsterCanUsed == MonsterType || weapon->MonsterCanUsed == AllTyps)
+	if (weapon->AllowedMonsterType == MonsterType || weapon->AllowedMonsterType == AllTypes)
 	{
 		if (Strength >= weapon->MinStrength && Dexterity >= weapon->MinDexterity)
 			return true;

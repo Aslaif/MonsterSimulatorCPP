@@ -19,7 +19,7 @@ public:
 	int Dexterity{ 1 };
 
 	int Bleeding{ 0 };
-	int Poisened{ 0 };
+	int Poisoned{ 0 };
 
 	int LevelUpHitPoints{ 25 };
 	int LevelUpAttackPoints{ 5 };
@@ -44,7 +44,7 @@ public:
 	virtual void AddState(int);
 	virtual void BuffByWeapons();
 	virtual void CreateWeapons(int randomValue, int level) = 0; 
-	virtual bool IsUseableWeapon(Weapon* weapon);
+	virtual bool IsUsableWeapon(Weapon* weapon);
 	virtual BaseMonster* Clone() = 0;
 
 	~BaseMonster();
